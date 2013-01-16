@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>TideSDK Play Sound Demo</title>
+    <title>AppJS Play Sound Demo</title>
     <style>
       body {
         background-color: #1c1c1c;
@@ -26,13 +26,14 @@
   </body>
   <script>
     (function() {
+      /** using JS Audio does not work on AppJS 0.0.20 on Windows, but does work when this same file is opened in Chrome. An alternative might be using node modules **/
       var sadSound;
 
       document.getElementById("playButton").onclick = playSound;
       playSound();
 
       function playSound() {
-        sadSound = new Audio("sadSound.wav");
+        sadSound = new Audio("sadSound.wav"); //http://www.freesound.org/people/Benboncan/sounds/73581/
         sadSound.play();
       }
     })();
