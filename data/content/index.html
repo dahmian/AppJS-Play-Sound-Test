@@ -1,10 +1,40 @@
-<!doctype html>
 <html>
   <head>
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TideSDK Play Sound Demo</title>
+    <style>
+      body {
+        background-color: #1c1c1c;
+        margin: 0
+      }
+
+      #faceWink {
+        display: block;
+        margin: 0 auto;
+        width: 350px;
+      }
+
+      #playButton {
+        display: block;
+        margin: 0 auto;
+        font-size: 24pt;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <img id="faceWink" src="faceWink.svg"/> <!-- http://openclipart.org/detail/30199/tango-face-wink-by-warszawianka -->
+    <button id="playButton">Play Again!</button>
   </body>
+  <script>
+    (function() {
+      var sadSound;
+
+      document.getElementById("playButton").onclick = playSound;
+      playSound();
+
+      function playSound() {
+        sadSound = new Audio("sadSound.wav");
+        sadSound.play();
+      }
+    })();
+  </script>
 </html>
